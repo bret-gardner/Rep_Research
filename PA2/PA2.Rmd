@@ -1,0 +1,21 @@
+---
+title: "Analysis of Public Health and Economic Costs of Severe Weather Events in the U.S."
+author: "Bret J. Gardner"
+date: "January 12, 2016"
+output: html_document
+---
+##Synopsis - 
+
+
+##Data Processing - 
+- A brief description of how the data was loaded and processed for the analyses.
+
+```{r}
+
+```
+
+
+##Results - 
+
+
+
