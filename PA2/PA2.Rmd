@@ -10,10 +10,31 @@ output: html_document
 ##Data Processing - 
 - A brief description of how the data was loaded and processed for the analyses.
 
-```{r}
 
+Install necessary packages
+```{r}
+  packages <- c('dplyr','data.table')
+  for(package in packages){
+    if(package %in% rownames(installed.packages()) == FALSE){
+      install.packages(package)
+    }
+  }
+require("dplyr")
+require('data.table')
 ```
 
+Download file R:
+```{r}
+if(!file.exists('repdata-data-StormData.csv.bz2')){
+  URL <- "https://github.com/bret-gardner/Rep_Research/blob/master/PA2/repdata-data-StormData.csv.bz2"
+  download.file(URL,"repdata-data-StormData.csv.bz2")
+}
+```
+
+Load data and convert date column to character format:
+```{r cahce = TRUE} 
+StormData <- read.csv('repdata-data-StormData.csv')
+```
 
 ##Results - 
 
