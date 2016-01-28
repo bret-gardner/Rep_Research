@@ -10,6 +10,10 @@ output: html_document
 ##Data Processing - 
 - A brief description of how the data was loaded and processed for the analyses.
 
+Set Working Direcotry to source file location:
+```{r}
+setwd("~/GitHub/Rep_Research/PA2")
+```
 
 Install necessary packages
 ```{r}
@@ -31,9 +35,9 @@ if(!file.exists('repdata-data-StormData.csv.bz2')){
 }
 ```
 
-Load data and convert date column to character format:
-```{r cahce = TRUE} 
-StormData <- read.csv('repdata-data-StormData.csv')
+Load data:
+```{r cache=TRUE} 
+StormData <- read.csv('repdata-data-StormData.csv.bz2')
 ```
 
 ##Results - 

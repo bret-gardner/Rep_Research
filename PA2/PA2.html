@@ -76,6 +76,39 @@ img {
 <ul>
 <li>A brief description of how the data was loaded and processed for the analyses.</li>
 </ul>
+<p>Set Working Direcotry to source file location:</p>
+<pre class="r"><code>setwd(&quot;~/GitHub/Rep_Research/PA2&quot;)</code></pre>
+<p>Install necessary packages</p>
+<pre class="r"><code>  packages &lt;- c('dplyr','data.table')
+  for(package in packages){
+    if(package %in% rownames(installed.packages()) == FALSE){
+      install.packages(package)
+    }
+  }
+require(&quot;dplyr&quot;)</code></pre>
+<pre><code>## Loading required package: dplyr</code></pre>
+<pre><code>## 
+## Attaching package: 'dplyr'</code></pre>
+<pre><code>## The following objects are masked from 'package:stats':
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<pre class="r"><code>require('data.table')</code></pre>
+<pre><code>## Loading required package: data.table</code></pre>
+<pre><code>## 
+## Attaching package: 'data.table'</code></pre>
+<pre><code>## The following objects are masked from 'package:dplyr':
+## 
+##     between, last</code></pre>
+<p>Download file R:</p>
+<pre class="r"><code>if(!file.exists('repdata-data-StormData.csv.bz2')){
+  URL &lt;- &quot;https://github.com/bret-gardner/Rep_Research/blob/master/PA2/repdata-data-StormData.csv.bz2&quot;
+  download.file(URL,&quot;repdata-data-StormData.csv.bz2&quot;)
+}</code></pre>
+<p>Load data:</p>
+<pre class="r"><code>StormData &lt;- read.csv('repdata-data-StormData.csv.bz2')</code></pre>
 </div>
 <div id="results--" class="section level2">
 <h2>Results -</h2>
